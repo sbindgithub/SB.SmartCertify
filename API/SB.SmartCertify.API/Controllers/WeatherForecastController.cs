@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SB.SmartCertify.Infrastructure;
 
 namespace SB.SmartCertify.API.Controllers
 {
@@ -11,23 +12,28 @@ namespace SB.SmartCertify.API.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        private readonly SmartCertifyContext _smartCertifyContext;
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(SmartCertifyContext smartCertifyContext, ILogger<WeatherForecastController> logger)
         {
+            _smartCertifyContext = smartCertifyContext;
             _logger = logger;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IActionResult Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //{
+            //    Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            //    TemperatureC = Random.Shared.Next(-20, 55),
+            //    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            //})
+            //.ToArray();
+
+            var model=_smartCertifyContext.UserProfiles.ToList();    
+            return Ok(model);
         }
     }
 }
