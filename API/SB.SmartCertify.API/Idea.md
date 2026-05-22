@@ -22,3 +22,15 @@ http://dev.azure.com/
 
 ## My Azure Devops link
 https://dev.azure.com/saradaranjanbehera
+
+
+| Directory Name    | Status  | Domain                                      | Directory ID                         |
+|-------------------|---------|---------------------------------------------|--------------------------------------|
+| Default Directory | Current | saradaranjanbeheraoutloo655.onmicrosoft.com | 097b35e2-602c-478c-9c65-a5ec7316ac6f |
+| Default Directory | Switch | saradaranjanbeheraoutlook.onmicrosoft.com   | 643ce07b-1fb7-41d7-94df-0aed337e927a |
+
+### Subscription ID:
+SmartCertifyApp
+
+DB Pass:
+sb@57940
