@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-
+// This is the AboutComponent which serves as the about page of the application.
 }
